@@ -1,5 +1,5 @@
 <?php
 
-define('BASE_URL', 'http://localhost/TrazorExternal');
+define('BASE_URL', 'https://mhmdarc.site/trazor_external/');
 
 ?>
