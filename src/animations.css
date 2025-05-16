@@ -1,0 +1,113 @@
+/* General Animation Keyframes */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    0% {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes rotateIn {
+    0% {
+        opacity: 0;
+        transform: rotate(-30deg);
+    }
+    100% {
+        opacity: 1;
+        transform: rotate(0);
+    }
+}
+
+/* Apply Animations to Sections */
+#intro-video {
+    animation: fadeIn 1s ease-out;
+}
+
+#home {
+    animation: slideInLeft 1s ease-out;
+}
+
+#stats {
+    animation: zoomIn 1.2s ease-out;
+}
+
+#card {
+    animation: scaleIn 1s ease-out;
+}
+
+#BestSeller {
+    animation: slideInRight 1.2s ease-out;
+}
+
+#unit-overview {
+    animation: fadeIn 1s ease-out;
+}
+
+#Portfolio {
+    animation: rotateIn 1s ease-out;
+}
+
+#contact {
+    animation: slideInLeft 1.2s ease-out;
+}
+
+#footer {
+    animation: zoomIn 1s ease-out;
+}
+
+/* Fade-in on Scroll */
+.section-inview {
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+.section-inview.visible {
+    opacity: 1;
+}
