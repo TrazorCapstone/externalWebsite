@@ -1333,6 +1333,10 @@ video {
   padding-top: 9rem;
 }
 
+.text-left {
+  text-align: left;
+}
+
 .text-center {
   text-align: center;
 }
@@ -2100,6 +2104,10 @@ body {
     order: 2;
   }
 
+  .lg\:mb-0 {
+    margin-bottom: 0px;
+  }
+
   .lg\:mt-9 {
     margin-top: 2.25rem;
   }
@@ -2145,6 +2153,10 @@ body {
   .lg\:px-20 {
     padding-left: 5rem;
     padding-right: 5rem;
+  }
+
+  .lg\:text-left {
+    text-align: left;
   }
 
   .lg\:text-2xl {

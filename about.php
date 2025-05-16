@@ -1,5 +1,3 @@
-<?php include 'navbar.php'; ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,150 +11,151 @@
 
 </head>
 <body >
-    <!-- Intro Section Start -->
-    <section id="intro-video" class="relative w-full h-[50vh] overflow-hidden">
-        <img src="dist/img/about.jpg" alt="WorkSpace" class="absolute inset-0 w-full h-full object-cover">
-        <div class="absolute inset-0 w-full h-full bg-black bg-opacity-50 z-20"></div>
-        <div class="absolute inset-y-2/3 z-30 flex flex-col justify-center items-start px-10 lg:px-20 w-full">
-            <h1 class="text-white font-extrabold text-3xl md:text-5xl max-w-xl leading-tight drop-shadow-[4px_2px_5px_rgba(0,0,0,0.7)] mb-4">
-                YOUR TRUSTWORTHY <br> SOLUTION PARTNER
-            </h1>
-            <div class="flex space-x-4">
-                <a href="#home" class="text-white font-medium text-sm md:text-base border-b-2 border-white hover:text-primary transition duration-300">
-                    Company Overview
-                </a>
-            </div>
-        </div>
-    </section>
-    <!-- Intro Section End -->
+  <?php include 'navbar.php'; ?>
+  <!-- Intro Section Start -->
+  <section id="intro-video" class="relative w-full h-[50vh] overflow-hidden">
+      <img src="dist/img/about.jpg" alt="WorkSpace" class="absolute inset-0 w-full h-full object-cover">
+      <div class="absolute inset-0 w-full h-full bg-black bg-opacity-50 z-20"></div>
+      <div class="absolute inset-y-2/3 z-30 flex flex-col justify-center items-start px-10 lg:px-20 w-full">
+          <h1 class="text-white font-extrabold text-3xl md:text-5xl max-w-xl leading-tight drop-shadow-[4px_2px_5px_rgba(0,0,0,0.7)] mb-4">
+              YOUR TRUSTWORTHY <br> SOLUTION PARTNER
+          </h1>
+          <div class="flex space-x-4">
+              <a href="#home" class="text-white font-medium text-sm md:text-base border-b-2 border-white hover:text-primary transition duration-300">
+                  Company Overview
+              </a>
+          </div>
+      </div>
+  </section>
+  <!-- Intro Section End -->
 
-      
-    <!-- Hero Section Start -->
-    <section id="home" class="pt-28 pb-28 ">
-        <div class="container">
-         <div class="flex flex-wrap">
+    
+  <!-- Hero Section Start -->
+  <section id="home" class="pt-28 pb-28 ">
+      <div class="container">
+        <div class="flex flex-wrap">
+          <div class="w-full self-end px-4 lg:w-1/2">
+            <div class="relative mt-10 lg:mt-9 lg:right-0">
+              <img src="dist/img/abouthero.webp" alt="Dapa" class="max-w-lg mx-auto">
+            </div>
+          </div>
+          <div class="w-full mt-8 self-center px-4 lg:w-1/2">
+              <h1 class="text-3xl font-extrabold text-dark lg:text-4xl leading-tight mb-4">
+                Draw Your Future with Us<br class="hidden md:block" />
+              </h1>
+              <p class="text-slate-600 text-xl leading-relaxed mb-6">
+                At PT Trazor, our greatest asset is our people, driving the core of our business activities.
+              </p>
+              <p class="text-slate-600 text-xl leading-relaxed mb-6">
+                We actively seek and employ competent, high-quality individuals who collaborate to ensure the sustainability and success of our business.
+              </p>
+              <a href="#about" class="text-red-600 font-bold text-sm hover:underline inline-flex items-center gap-1">
+                Our Recruitment Process
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8z"/>
+                </svg>
+              </a>
+            </div>    
+        </div>
+        <div class="flex flex-wrap">
+          <div class="w-full self-center p-16 lg:w-1/2 mt-20">
+              <h1 class="text-3xl font-extrabold text-dark lg:text-2xl leading-tight mt-20 mb-4">
+                Beware of Recruitment Fraud in the Name of PT Trazor<br class="hidden md:block" /> 
+              </h1>
+              <p class="text-slate-600 text-xl leading-relaxed mb-6">
+                The recruitment process at PT Trazor is completely FREE of charge. PT Trazor NEVER collaborates with any travel agencies or external agencies in the recruitment process.
+              </p>
+              <p class="text-slate-600 text-xl leading-relaxed mb-6">
+                If Young Talents come across any fraudulent job offers, please report them to <span class="font-extrabold">human.resource@trazor.co.id.</span>.
+              </p>
+              <a href="#about" class="text-red-600 font-bold text-sm hover:underline inline-flex items-center gap-1">
+                Contact Us 
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8z"/>
+                </svg>
+              </a>
+            </div>    
             <div class="w-full self-end px-4 lg:w-1/2">
-              <div class="relative mt-10 lg:mt-9 lg:right-0">
-                <img src="dist/img/abouthero.webp" alt="Dapa" class="max-w-lg mx-auto">
+              <div class="relative mb-10 lg:mt-9 lg:right-0">
+                <img src="dist/img/abouthero2.webp" alt="Dapa" class="max-w-lg mx-auto">
               </div>
             </div>
-            <div class="w-full mt-8 self-center px-4 lg:w-1/2">
-               <h1 class="text-3xl font-extrabold text-dark lg:text-4xl leading-tight mb-4">
-                  Draw Your Future with Us<br class="hidden md:block" />
-               </h1>
-               <p class="text-slate-600 text-xl leading-relaxed mb-6">
-                  At PT Trazor, our greatest asset is our people, driving the core of our business activities.
-               </p>
-               <p class="text-slate-600 text-xl leading-relaxed mb-6">
-                  We actively seek and employ competent, high-quality individuals who collaborate to ensure the sustainability and success of our business.
-               </p>
-               <a href="#about" class="text-red-600 font-bold text-sm hover:underline inline-flex items-center gap-1">
-                 Our Recruitment Process
-                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                   <path d="M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8z"/>
-                 </svg>
-               </a>
-             </div>    
-         </div>
-         <div class="flex flex-wrap">
-            <div class="w-full self-center p-16 lg:w-1/2 mt-20">
-               <h1 class="text-3xl font-extrabold text-dark lg:text-2xl leading-tight mt-20 mb-4">
-                  Beware of Recruitment Fraud in the Name of PT Trazor<br class="hidden md:block" /> 
-               </h1>
-               <p class="text-slate-600 text-xl leading-relaxed mb-6">
-                  The recruitment process at PT Trazor is completely FREE of charge. PT Trazor NEVER collaborates with any travel agencies or external agencies in the recruitment process.
-               </p>
-               <p class="text-slate-600 text-xl leading-relaxed mb-6">
-                  If Young Talents come across any fraudulent job offers, please report them to <span class="font-extrabold">human.resource@trazor.co.id.</span>.
-               </p>
-               <a href="#about" class="text-red-600 font-bold text-sm hover:underline inline-flex items-center gap-1">
-                 Contact Us 
-                 <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
-                   <path d="M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8z"/>
-                 </svg>
-               </a>
-             </div>    
-             <div class="w-full self-end px-4 lg:w-1/2">
-               <div class="relative mb-10 lg:mt-9 lg:right-0">
-                 <img src="dist/img/abouthero2.webp" alt="Dapa" class="max-w-lg mx-auto">
-               </div>
-             </div>
-         </div>
-        </div>
-    </section>
-    <!-- Hero Section End -->
-
-
-    <!-- Recruitment Section Start -->
-    <section class="bg-gray-900 text-white py-16">
-              <div class="container mx-auto text-center mb-28">
-            <h2 class="text-white text-lg font-semibold uppercase tracking-wider mb-2">Recruitment
-            </h2>
-            <p class="text-white text-4xl font-bold leading-tight mb-4">Recruitment Process</p>
-            <p class="text-gray-400 text-lg max-w-3xl mx-auto">
-                The recruitment process at PT Trazor is designed to ensure that we select the best candidates who align with our values. We are committed to providing equal opportunities for all applicants, regardless of their background or experience.
-            </p>
-        </div>
-      <div class="max-w-7xl mx-auto px-8 mb-8">
-        <div class="flex items-center justify-center flex-wrap">
-          <div class="flex flex-col items-center text-center m-6">
-            <div class="bg-white rounded-full p-4">
-              <img src="dist/img/icon-user-check.svg" class="w-8 h-8" alt="Administrative Selection">
-            </div>
-            <p class="text-sm font-semibold mt-2">Administrative</p>
-          </div>
-          <div class="border-t border-white w-4 mx-auto"></div>
-
-          <div class="flex flex-col items-center text-center m-6">
-            <div class="bg-white rounded-full p-4">
-              <img src="dist/img/icon-psychotest.svg" class="w-8 h-8" alt="Psychotest">
-            </div>
-            <p class="text-sm font-semibold mt-2">Psychotest</p>
-          </div>
-          <div class="border-t border-white w-4 mx-auto"></div>
-
-          <div class="flex flex-col items-center text-center m-6">
-            <div class="bg-white rounded-full p-4">
-              <img src="dist/img/icon-chat.svg" class="w-8 h-8" alt="HC Interview">
-            </div>
-            <p class="text-sm font-semibold mt-2">HC Interview</p>
-          </div>
-          <div class="border-t border-white w-4 mx-auto"></div>
-
-          <div class="flex flex-col items-center text-center m-6">
-            <div class="bg-white rounded-full p-4">
-              <img src="dist/img/icon-interview.svg" class="w-8 h-8" alt="User & BOD Interview">
-            </div>
-            <p class="text-sm font-semibold mt-2">User Interview</p>
-          </div>
-          <div class="border-t border-white w-4 mx-auto"></div>
-
-          <div class="flex flex-col items-center text-center m-6">
-            <div class="bg-white rounded-full p-4">
-              <img src="dist/img/icon-offering.svg" class="w-8 h-8" alt="Offering">
-            </div>
-            <p class="text-sm font-semibold mt-2">Offering</p>
-          </div>
-          <div class="border-t border-white w-4 mx-auto"></div>
-
-          <div class="flex flex-col items-center text-center m-6">
-            <div class="bg-white rounded-full p-4">
-              <img src="dist/img/icon-medical-kit.svg" class="w-8 h-8" alt="Medical Checkup">
-            </div>
-            <p class="text-sm font-semibold mt-2">Medical Checkup</p>
-          </div>
-          <div class="border-t border-white w-4 mx-auto"></div>
-
-          <div class="flex flex-col items-center text-center m-6">
-            <div class="bg-white rounded-full p-4">
-              <img src="dist/img/icon-working.svg" class="w-8 h-8" alt="On Boarding">
-            </div>
-            <p class="text-sm font-semibold mt-2">On Boarding</p>
-          </div>
         </div>
       </div>
-    </section>
-   <!-- Recruitment Section End -->
+  </section>
+  <!-- Hero Section End -->
+
+
+  <!-- Recruitment Section Start -->
+  <section class="bg-gray-900 text-white py-16">
+            <div class="container mx-auto text-center mb-28">
+          <h2 class="text-white text-lg font-semibold uppercase tracking-wider mb-2">Recruitment
+          </h2>
+          <p class="text-white text-4xl font-bold leading-tight mb-4">Recruitment Process</p>
+          <p class="text-gray-400 text-lg max-w-3xl mx-auto">
+              The recruitment process at PT Trazor is designed to ensure that we select the best candidates who align with our values. We are committed to providing equal opportunities for all applicants, regardless of their background or experience.
+          </p>
+      </div>
+    <div class="max-w-7xl mx-auto px-8 mb-8">
+      <div class="flex items-center justify-center flex-wrap">
+        <div class="flex flex-col items-center text-center m-6">
+          <div class="bg-white rounded-full p-4">
+            <img src="dist/img/icon-user-check.svg" class="w-8 h-8" alt="Administrative Selection">
+          </div>
+          <p class="text-sm font-semibold mt-2">Administrative</p>
+        </div>
+        <div class="border-t border-white w-4 mx-auto"></div>
+
+        <div class="flex flex-col items-center text-center m-6">
+          <div class="bg-white rounded-full p-4">
+            <img src="dist/img/icon-psychotest.svg" class="w-8 h-8" alt="Psychotest">
+          </div>
+          <p class="text-sm font-semibold mt-2">Psychotest</p>
+        </div>
+        <div class="border-t border-white w-4 mx-auto"></div>
+
+        <div class="flex flex-col items-center text-center m-6">
+          <div class="bg-white rounded-full p-4">
+            <img src="dist/img/icon-chat.svg" class="w-8 h-8" alt="HC Interview">
+          </div>
+          <p class="text-sm font-semibold mt-2">HC Interview</p>
+        </div>
+        <div class="border-t border-white w-4 mx-auto"></div>
+
+        <div class="flex flex-col items-center text-center m-6">
+          <div class="bg-white rounded-full p-4">
+            <img src="dist/img/icon-interview.svg" class="w-8 h-8" alt="User & BOD Interview">
+          </div>
+          <p class="text-sm font-semibold mt-2">User Interview</p>
+        </div>
+        <div class="border-t border-white w-4 mx-auto"></div>
+
+        <div class="flex flex-col items-center text-center m-6">
+          <div class="bg-white rounded-full p-4">
+            <img src="dist/img/icon-offering.svg" class="w-8 h-8" alt="Offering">
+          </div>
+          <p class="text-sm font-semibold mt-2">Offering</p>
+        </div>
+        <div class="border-t border-white w-4 mx-auto"></div>
+
+        <div class="flex flex-col items-center text-center m-6">
+          <div class="bg-white rounded-full p-4">
+            <img src="dist/img/icon-medical-kit.svg" class="w-8 h-8" alt="Medical Checkup">
+          </div>
+          <p class="text-sm font-semibold mt-2">Medical Checkup</p>
+        </div>
+        <div class="border-t border-white w-4 mx-auto"></div>
+
+        <div class="flex flex-col items-center text-center m-6">
+          <div class="bg-white rounded-full p-4">
+            <img src="dist/img/icon-working.svg" class="w-8 h-8" alt="On Boarding">
+          </div>
+          <p class="text-sm font-semibold mt-2">On Boarding</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Recruitment Section End -->
 
     
 
@@ -214,7 +213,7 @@
       </div>
     </div>
   </section>
-    <!-- Sustainability Section End -->
+  <!-- Sustainability Section End -->
 
   <?php include 'footer.php'; ?>
   <script src="dist/js/script.js"></script>    

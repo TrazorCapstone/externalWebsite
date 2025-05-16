@@ -1,4 +1,4 @@
-<?php include 'navbar.php'; ?>
+<!--<?php include 'navbar.php'; ?>-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,8 +13,9 @@
     <link rel="icon" href="dist/img/favicon.ico" type="image/x-icon">
 </head>
 <body>
+    <?php include 'navbar.php'; ?>
     <!-- Intro Section Start -->
-    <section id="intro-video" class="relative w-full h-full overflow-hidden">
+    <section id="intro-video" class="relative w-full h-screen overflow-hidden">
         <video autoplay muted loop playsinline preload="auto"
           class="absolute inset-0 w-full h-full object-cover scale-110 md:scale-125 lg:scale-[1.35] transition-transform duration-700 z-10">
           <source src="dist/vid/companyprofile.mp4" type="video/mp4">
@@ -159,7 +160,7 @@
                 <div class="absolute bottom-6 left-24 z-20 transition-all duration-500 group-hover:bottom-10">
                     <h2 class="text-white text-3xl font-bold">Hose</h2>
                     <p class="text-white text-sm max-w-[250px] opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                            Alfagomma hoses offer expert customized OEM solutions with reliability and safety for demanding industrial needs.
+                        Alfagomma hoses offer expert customized OEM solutions with reliability and safety for demanding industrial needs.
                     </p>
                 </div>
                 <span

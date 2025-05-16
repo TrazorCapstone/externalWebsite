@@ -1,17 +1,37 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 include 'includes/connection.php'; 
 include 'config.php'; 
 
-$search = isset($_GET['search']) ? trim($connection->real_escape_string($_GET['search'])) : '';
+$search = isset($_GET['search']) ? trim($_GET['search']) : '';
 $result = null;
 $error_message = '';
 
 if (!empty($search)) {
-    $sql = "SELECT * FROM product WHERE judul LIKE '%$search%' OR barang LIKE '%$search%' OR deskripsi LIKE '%$search%'";
-    $result = $connection->query($sql);
+    try {
+        $sql = "SELECT * FROM product WHERE barang LIKE ?";
+        $stmt = $connection->prepare($sql);
+        
+        if ($stmt) {
+            $searchParam = "%{$search}%";
+            
+            $stmt->bind_param("s", $searchParam);
 
-    if ($result->num_rows === 0) {
-        $error_message = "No products found for \"$search\"";
+            $stmt->execute();
+
+            $result = $stmt->get_result();
+            
+            if ($result->num_rows === 0) {
+                $error_message = "No products found for \"" . htmlspecialchars($search) . "\"";
+            }
+        } else {
+            $error_message = "Database query preparation failed";
+        }
+    } catch (Exception $e) {
+        $error_message = "An error occurred while searching";
     }
 }
+
 ?>

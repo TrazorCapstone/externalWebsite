@@ -39,19 +39,18 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-// Function to animate number increase
 function animateNumber(id, targetNumber, duration) {
     const element = document.getElementById(id);
     let start = 0;
-    const increment = targetNumber / (duration / 50); // This makes the number increase slowly over time
+    const increment = targetNumber / (duration / 50); 
 
     const interval = setInterval(() => {
         start += increment;
         if (start >= targetNumber) {
-            start = targetNumber; // Ensure it stops exactly at targetNumber
-            clearInterval(interval); // Stop the animation
+            start = targetNumber; 
+            clearInterval(interval); 
         }
-        element.textContent = Math.floor(start); // Update text content
+        element.textContent = Math.floor(start); 
     }, 50);
 }
 
@@ -74,7 +73,6 @@ function animateNumber(id, target, duration) {
   requestAnimationFrame(update);
 }
 
-// Observer to trigger animation when element is in view
 document.addEventListener('DOMContentLoaded', function () {
   const counters = [
     { id: 'employeeCount', target: 200, duration: 4600 },
@@ -115,41 +113,68 @@ window.onscroll = function() {
 
 emailjs.init("OjMo3ksBxFTqK9fjp");
 
-    const form = document.getElementById("contact-form");
-    const status = document.getElementById("status");
-    const btn = document.getElementById("submit-btn");
-    const svg = document.getElementById("svgAnim");
+const form = document.getElementById("contact-form");
+const status = document.getElementById("status");
+const btn = document.getElementById("submit-btn");
+const svg = document.getElementById("svgAnim");
 
-    let isLoading = false;
+let isLoading = false;
 
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      if (isLoading) return;
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+  if (isLoading) return;
 
-      isLoading = true;
-      status.textContent = "";
-      btn.disabled = true;
-      btn.textContent = "Sending...";
+  const from_name = form.querySelector('input[name="from_name"]').value.trim();
+  const message = form.querySelector('textarea[name="message"]').value.trim();
 
-      emailjs.sendForm("service_ar5vx49", "template_pdc2qwa", form)
-        .then(() => {
-          isLoading = false;
-          status.textContent = "Your message has been sent successfully! Please wait for the Response.";
-          status.style.color = "green";
-          form.reset();
-          btn.disabled = false;
-          btn.textContent = "Submit";
-        })
-        .catch(() => {
-          isLoading = false;
-          status.textContent = "Failed to send your message. Please try again later.";
-          status.style.color = "red";
-          btn.disabled = false;
-          btn.textContent = "Submit";
-        });
+  const nameRegex = /^[a-zA-Z0-9 @.,:]+$/;
+  if (!nameRegex.test(from_name)) {
+    status.textContent = "Name hanya boleh berisi huruf, angka, spasi, dan simbol @ . , :";
+    status.style.color = "red";
+    form.querySelector('input[name="from_name"]').focus();
+    return; 
+  }
+
+  const messageRegex = /^[a-zA-Z0-9 ,."\n\r:]+$/;
+  if (!messageRegex.test(message)) {
+    status.textContent = 'Message hanya boleh berisi huruf, angka, spasi, dan simbol , . " :';
+    status.style.color = "red";
+    form.querySelector('textarea[name="message"]').focus();
+    return; 
+  }
+
+  isLoading = true;
+  status.textContent = "";
+  btn.disabled = true;
+  btn.textContent = "Sending...";
+
+  emailjs.sendForm("service_ar5vx49", "template_pdc2qwa", form)
+    .then(() => {
+      isLoading = false;
+      status.textContent = "Your message has been sent successfully! Please wait for the Response.";
+      status.style.color = "green";
+      form.reset();
+      btn.disabled = false;
+      btn.textContent = "Submit";
+    })
+    .catch(() => {
+      isLoading = false;
+      status.textContent = "Failed to send your message. Please try again later.";
+      status.style.color = "red";
+      btn.disabled = false;
+      btn.textContent = "Submit";
     });
+});
 
-   // SVG hide & form show logic after draw animation
+window.addEventListener("DOMContentLoaded", () => {
+  const formEl = document.querySelector(".form");
+  setTimeout(() => {
+    if (svg) svg.classList.add("hide");
+    if (formEl) formEl.classList.add("show");
+  }, 3600);
+});
+
+
    window.addEventListener("DOMContentLoaded", () => {
       const formEl = document.querySelector(".form");
        setTimeout(() => {
@@ -163,14 +188,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const sections = document.querySelectorAll(".section-inview");
 
   const observerOptions = {
-      root: null, // relative to the viewport
+      root: null, 
       rootMargin: "0px",
-      threshold: 0.5 // Trigger when 50% of section is visible
+      threshold: 0.5 
   };
 
   const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-          // If the section is in view, add the 'visible' class
           if (entry.isIntersecting) {
               entry.target.classList.add("visible");
           } else {
@@ -179,7 +203,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
   }, observerOptions);
 
-  // Observe all sections
   sections.forEach(section => {
       observer.observe(section);
   });
@@ -191,26 +214,21 @@ document.addEventListener('DOMContentLoaded', function() {
     const searchInput = searchForm.querySelector('input[name="search"]');
     const resetButton = searchForm.querySelector('button[type="reset"]');
 
-    // Function to handle reset 
     function handleReset(e) {
         if (e) {
             e.preventDefault();
         }
-        // Selalu redirect ke product.php saat reset
         window.location.href = 'product.php';
     }
 
-    // Handle reset button click
     resetButton.addEventListener('click', handleReset);
 
-    // Handle Escape key
     searchInput.addEventListener('keyup', function(e) {
         if (e.key === 'Escape') {
             handleReset(e);
         }
     });
 
-    // Handle form submission untuk input kosong
     searchForm.addEventListener('submit', function(e) {
         if (!searchInput.value.trim()) {
             e.preventDefault();

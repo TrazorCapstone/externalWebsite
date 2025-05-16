@@ -1,4 +1,7 @@
-
+<?php 
+// include 'includes/connection.php';
+include 'search.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,11 +16,8 @@
 
 </head>
 <body class="bg-black">
-    <?php 
-include 'search.php';
-?>
     <!-- Navbar Start -->
-    <!-- <header class="bg-white fixed top-0 left-0 w-full flex items-center z-40">
+    <header class="bg-white fixed top-0 left-0 w-full flex items-center z-40">
         <div class="container">
             <div class="flex items-center justify-between relative">
                     <div class="px-4">
@@ -25,7 +25,7 @@ include 'search.php';
                         <img src="dist/img/logo.png" alt="Logo" class="max-w-[120px] h-auto">
                     </a>                    
                     </div>
-                    <div class="flex items-center px-4">
+                <div class="flex items-center px-4">
                     <button id="hamburger" name="hamburger" type="button" class="block absolute right-4 lg:hidden">
                     </button>
 
@@ -49,10 +49,10 @@ include 'search.php';
                                 </li>
                         </ul>
                     </nav>                    
-                    </div>
+                </div>
             </div>
         </div>
-    </header> -->
+    </header>
     <!-- Navbar End -->
 
 
@@ -78,7 +78,7 @@ include 'search.php';
                 Our products are designed to tackle the challenges encountered in diverse environments.
             </p>
             <p class="text-gray-400 text-xl max-w-3xl mx-auto mt-12">
-                Search your products, Press <span class="text-white">ENTER</span> to search, or Reset.
+                Search your products, press <span class="text-white">ENTER</span> to search, or reset.
             </p>
         </div>
         <div class="relative h-24 flex items-center justify-center overflow-hidden mb-14">
@@ -92,25 +92,52 @@ include 'search.php';
         </div>
         <div id="search-results" class="container">
             <?php if (isset($search) && !empty(trim($search))): ?>
-                <h2 class="text-white text-lg font-semibold uppercase tracking-wider mb-2">Search Results for "<?= htmlspecialchars($search) ?>"</h2>
+                <h2 class="text-white text-lg font-semibold uppercase tracking-wider text-center mb-8">Search Results for "<?= htmlspecialchars($search) ?>"</h2>
                 <?php if ($result && $result->num_rows > 0): ?>
-                    <div class="flex flex-wrap">
-                        <?php while ($row = $result->fetch_assoc()): ?>
-                            <div class="w-full px-2 mb-10 lg:w-1/2 order-1">
-                                <a href="product.php?id=<?= $row['id'] ?>">
-                                    <img src="<?= BASE_URL . '/dist/img/' . $row['path_img'] ?>" alt="<?= ucwords($row['barang']) ?>" class="w-9/12 h-auto rounded-lg mx-auto">
-                                </a>
+                    <?php 
+                    $counter = 0;
+                    while ($row = $result->fetch_assoc()): 
+                        $isEven = ($counter % 2 == 0);
+                    ?>
+                        <div class="container mb-12">
+                            <div class="flex flex-wrap items-center">
+                                <?php if ($isEven): ?>
+                                    <div class="w-full lg:w-1/2 px-4 mb-6 lg:mb-0">
+                                        <img src="<?= BASE_URL . '/dist/img/' . htmlspecialchars($row['path_img']) ?>" alt="<?= ucwords(htmlspecialchars($row['barang'])) ?>" class="w-9/12 h-auto rounded-lg mx-auto" />
+                                    </div>
+                                    <div class="w-full lg:w-1/2 px-4 text-left lg:text-left">
+                                        <h2 class="text-white text-lg font-semibold uppercase tracking-wider mb-2"><?= strtoupper(htmlspecialchars($row['judul'])) ?></h2>
+                                        <p class="text-white text-4xl font-bold leading-tight mb-4"><?= ucwords(htmlspecialchars($row['barang'])) ?></p>
+                                        <p class="text-gray-400 text-xl max-w-3xl mx-auto"><?= htmlspecialchars($row['deskripsi']) ?></p>
+                                        <a href="contact.php" class="text-red-600 font-bold text-sm hover:underline inline-flex items-center gap-1 mt-4">
+                                            Request Inquiry
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                <?php else: ?>
+                                    <div class="w-full lg:w-1/2 px-4 text-left lg:text-left order-2 lg:order-1">
+                                        <h2 class="text-white text-lg font-semibold uppercase tracking-wider mb-2"><?= strtoupper(htmlspecialchars($row['judul'])) ?></h2>
+                                        <p class="text-white text-4xl font-bold leading-tight mb-4"><?= ucwords(htmlspecialchars($row['barang'])) ?></p>
+                                        <p class="text-gray-400 text-xl max-w-3xl mx-auto"><?= htmlspecialchars($row['deskripsi']) ?></p>
+                                        <a href="contact.php" class="text-red-600 font-bold text-sm hover:underline inline-flex items-center gap-1 mt-4">
+                                            Request Inquiry
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                                                <path d="M12 4l1.41 1.41L7.83 11H20v2H7.83l5.58 5.59L12 20l-8-8z"/>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                    <div class="w-full lg:w-1/2 px-4 mb-6 lg:mb-0 order-1 lg:order-2">
+                                        <img src="<?= BASE_URL . '/dist/img/' . htmlspecialchars($row['path_img']) ?>" alt="<?= ucwords(htmlspecialchars($row['barang'])) ?>" class="w-9/12 h-auto rounded-lg mx-auto" />
+                                    </div>
+                                <?php endif; ?>
                             </div>
-                            <div class="w-full px-2 lg:w-1/2 order-2">
-                                <h2 class="text-white text-lg font-semibold uppercase tracking-wider mt-16 mb-2"><?= strtoupper($row['judul']) ?></h2>
-                                <p class="text-white text-4xl font-bold leading-tight mb-4"><?= ucwords($row['barang']) ?></p>
-                                <p class="text-gray-400 text-xl max-w-3xl mx-auto"><?= $row['deskripsi'] ?></p>
-                                <a href="contact.php" class="text-red-600 font-bold text-sm hover:underline inline-flex items-center gap-1 mt-4">
-                                    Request Inquiry
-                                </a>
-                            </div>
-                        <?php endwhile; ?>
-                    </div>
+                        </div>
+                    <?php 
+                        $counter++;
+                    endwhile; 
+                    ?>
                 <?php else: ?>
                     <p class="text-center text-gray-500"><?= $error_message ?></p>
                 <?php endif; ?>
