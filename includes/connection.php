@@ -1,8 +1,8 @@
 <?php
 $host = getenv('DB_HOST') ?: 'localhost';
-$username = getenv('DB_USER') ?: 'root';
-$password = getenv('DB_PASS') ?: '';
-$database = getenv('DB_NAME') ?: 'trazor';
+$username = getenv('DB_USER') ?: 'u353862197_admin';
+$password = getenv('DB_PASS') ?: 'Arsy1234@';
+$database = getenv('DB_NAME') ?: 'u353862197_trazor';
     
 $connection = mysqli_connect($host, $username, $password, $database);
 
